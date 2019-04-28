@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>School</title>
+	<!--<link rel="stylesheet" type="text/css" href="../static/assets/css/bootstrap.min.css">-->
+	<!--<link rel="stylesheet" type="text/css" href="../static/assets/css/font-awesome.min.css">-->
+	<!--<link rel="stylesheet" type="text/css" href="../static/assets/css/style.css">-->
+	<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/bootstrap.min.css') }}" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/font-awesome.min.css') }}" />
+	<!--<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='assets/css/style.css')}}">
+</head>
+<body>
+{% block content %}{% endblock %}
+<script src="{{url_for('static',filename='assets/js/slim.js')}}"></script>
+<script src="{{url_for('static',filename='assets/js/popper.js')}}"></script>
+<script src="{{url_for('static',filename='assets/js/jquery.js')}}"></script>
+<script src="{{url_for('static',filename='assets/js/bootstrap.js')}}"></script>
+<script type="text/javascript">
+	$('.counter-count').each(function () {
+        $(this).prop('Counter',0).animate({
+            Counter: $(this).text()
+        }, {
+            duration: 5000,
+            easing: 'swing',
+            step: function (now) {
+                $(this).text(Math.ceil(now));
+            }
+        });
+    });
+
+</script>
+</body>
+</html>
